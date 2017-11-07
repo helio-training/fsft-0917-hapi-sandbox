@@ -1,12 +1,12 @@
-require('babel-polyfill');
+require('babel-polyfill')
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
-module.exports = require('./build');
+// module.exports = require('./build');
 
-// if(env === 'production'){
-//   module.exports = require('./build');
-// } else {
-//   require('babel-register');
-//   module.exports = require('./src');
-// }
+if (env === 'production') {
+  module.exports = require('./build')
+} else {
+  require('babel-register')
+  module.exports = require('./src')
+}
